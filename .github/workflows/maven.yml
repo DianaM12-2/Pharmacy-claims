@@ -23,12 +23,16 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean compile
+        working-directory: pharmacy-claims-api
 
       - name: Run unit tests
         run: mvn test
+        working-directory: pharmacy-claims-api
 
       - name: Package application
         run: mvn package -DskipTests
+        working-directory: pharmacy-claims-api
 
       - name: Build Docker image
         run: docker build -t pharmacy-claims-api:latest .
+        working-directory: pharmacy-claims-api
